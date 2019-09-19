@@ -1,12 +1,15 @@
 version: 2.1
 
+orbs:
+ ganta-git:ganat/git@1.2.0
+ 
 jobs:
  build:
    docker:
      - image: circleci/android:api-28
    resource_class: xlarge
    steps:
-     - checkout
+     - ganta-git/shallow-clone-checkout
      - run: echo $CIRCLR_JOB
      - run:
          name: Single command - echo
