@@ -4,6 +4,7 @@ jobs:
  build:
    docker:
      - image: circleci/android:api-28
+   resource_class: xlarge
    steps:
      - checkout
      - run: echo $CIRCLR_JOB
